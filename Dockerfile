@@ -20,7 +20,7 @@ ENV USER=cod3rocket
 ENV HOME=/home/$USER
 ENV PATH="$PATH:$HOME/.local/bin:$HOME/.local/share/mise/shims"
 
-RUN dnf install -y curl ca-certificates tar freetype dejavu-sans-fonts fontconfig \
+RUN dnf install -y curl ca-certificates tar freetype dejavu-sans-fonts fontconfig git \
     && dnf clean all \
     && rm -rf /var/cache/yum \
     && useradd -m -s /bin/bash $USER
@@ -37,10 +37,10 @@ COPY mise.toml /etc/mise/config.toml
 
 RUN mise trust && mise install --yes && mise reshim
 
-COPY --chown=$USER:$USER package.json bun.lock main.ts /opt/cod3rocket/pre-commit-hooks/
+COPY --chown=$USER:$USER package.json bun.lock main.ts entrypoint.sh /opt/cod3rocket/pre-commit-hooks/
 
 WORKDIR /opt/cod3rocket/pre-commit-hooks
 
 RUN bun i
 
-ENTRYPOINT [ "bun", "run", "entrypoint.ts" ]
+ENTRYPOINT [ "/opt/cod3rocket/pre-commit-hooks/entrypoint.sh" ]
