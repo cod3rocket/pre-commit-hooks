@@ -1,6 +1,6 @@
 repos:
   - repo: .
-    rev: v1.0.0
+    rev: v1.0.1
     hooks:
       - id: cod3rocket
         exclude: test/
