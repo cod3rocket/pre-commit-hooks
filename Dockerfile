@@ -37,7 +37,7 @@ COPY mise.toml /etc/mise/config.toml
 
 RUN mise trust && mise install --yes && mise reshim
 
-COPY --chown=$USER:$USER package.json bun.lock entrypoint.ts /opt/cod3rocket/pre-commit-hooks/
+COPY --chown=$USER:$USER package.json bun.lock main.ts /opt/cod3rocket/pre-commit-hooks/
 
 WORKDIR /opt/cod3rocket/pre-commit-hooks
 
