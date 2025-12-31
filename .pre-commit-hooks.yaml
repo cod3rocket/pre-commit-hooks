@@ -1,0 +1,9 @@
+- id: cod3rocket
+  name: Cod3Rocket
+  entry: ghcr.io/cod3rocker/pre-commit-hooks:v0.0.0
+  language: docker_image
+
+- id: cod3rocket-dev
+  name: Cod3Rocket
+  entry: ghcr.io/cod3rocker/pre-commit-hooks:dev
+  language: docker_image
