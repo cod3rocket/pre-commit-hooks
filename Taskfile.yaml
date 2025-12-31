@@ -2,4 +2,7 @@ version: "3"
 
 tasks:
   build:dev:
-    cmd: docker buildx build -t ghcr.io/cod3rocket/pre-commit-hooks:dev .
+    cmd: docker buildx build
+      --build-arg BUILD_VERSION=dev 
+      --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') 
+      -t ghcr.io/cod3rocket/pre-commit-hooks:dev .
