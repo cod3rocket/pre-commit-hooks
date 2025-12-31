@@ -9,4 +9,5 @@ Hooks de pre commit da cod3Rocket
 - [java (temurin)](https://adoptium.net) v21.0.9+10.0.LTS
 - [ktlint](https://pinterest.github.io/ktlint) v1.8.0
 - [opentofu](https://opentofu.org) v1.11.2
+- [pre-commit](https://pre-commit.com) v4.5.1
 - [task](https://taskfile.dev) v3.46.4
